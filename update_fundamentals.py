@@ -402,13 +402,6 @@ def update_earnings(cache, ticker, earnings, now_iso):
         latest.get("surprisePercentage")
     )
 
-    ttm_eps = calculate_ttm_eps(quarterly)
-
-    if ttm_eps is not None:
-        cache.loc[mask, "EPS TTM"] = ttm_eps
-
-    cache.loc[mask, "Actualizado earnings"] = now_iso
-
     return True
 
 
